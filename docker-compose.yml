@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - ./dataset:/podman-entrypoint-initdb.d
+    ports:
+      - 5432:5432
+
+# User Service 
